@@ -1,5 +1,3 @@
-lines (16 sloc)  638 Bytes
-
 # Minimal makefile for Sphinx documentation
 #
 
