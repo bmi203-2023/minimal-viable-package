@@ -45,7 +45,7 @@ class Greeting:
 
     def a_person(self, named=None):
         """
-        Prints a welcome message for a person by their name.
+        A welcome message for a person by their name.
         
         Parameters
         ----------
@@ -59,14 +59,16 @@ class Greeting:
 
         Returns
         -------
-        None
+        named_msg: str
+            A welcome message with a person's name.
         """
         if named is None:
             raise NotImplementedError("That's not there!")
 
         else:
             msg="Hello, {person}!"
-            print(msg.format(person=named))
+            named_msg = msg.format(person=named)
+            return named_msg
 
     def the_zen_of_python(self, read_file: str) -> list[str]:
         """
