@@ -6,6 +6,7 @@ Demonstrate how to structure a project, build Python packages, unit testing, Git
 
 ## Project Structure
 
+```bash
 Minimal-Example
 ├── README.md
 ├── data
@@ -31,7 +32,7 @@ Minimal-Example
     └── test_greeting.py
 
 11 directories, 12 files
-
+```
 
 ## Building a Python Package
 
