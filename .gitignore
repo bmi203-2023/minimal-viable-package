@@ -1,3 +1,4 @@
 .ipynb_checkpoints/
+src/example/__pycache__
 build/*
 .DS_Store

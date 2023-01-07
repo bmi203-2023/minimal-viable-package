@@ -11,7 +11,7 @@ authors = [{name = "Andrew Blair", email = "andrew.blair@ucsf.edu"}]
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
-dependencies = ["pytest", "numpy", "scipy", "matplotlib", "scikit-learn"]
+dependencies = ["pytest", "numpy", "scipy", "matplotlib", "scikit-learn", "sphinx"]
 
 [tool.coverage.run]
 source = ["src"]

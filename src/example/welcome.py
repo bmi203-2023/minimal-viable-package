@@ -3,7 +3,7 @@ UCSF BMI203: Biocomputing Algorithms Winter 2023
 Author: Andrew Blair
 Date: 1.06.23
 Program: welcome.py
-Description: A class to represent welcome greeetings and Python organization/documentation.
+Description: A class to represent welcome greetings and Python organization/documentation.
 """
 class Greeting:
     """
