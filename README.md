@@ -1,7 +1,8 @@
 ![BuildStatus](https://github.com/bmi203-2023/Minimal-Example/actions/workflows/main.yml/badge.svg?event=push)
-# Minimal-Example
-Demonstrate how to structure a project, build Python packages, unit testing, GitHub Actions, containers, and Read the Docs.
+[![Documentation Status](https://readthedocs.org/projects/Minimal-Example/badge/?version=latest)](https://Minimal-Example.readthedocs.io/en/latest/?badge=latest)
 
+# Minimal-Example
+Demonstrate how to structure a project, build Python packages, unit testing, GitHub Actions, distributions & containers, and Read the Docs.
 
 ## Project Structure
 
@@ -11,6 +12,6 @@ Demonstrate how to structure a project, build Python packages, unit testing, Git
 
 ## GitHub Actions
 
-## Containers
+## Distributions & Containers
 
 ## Read the Docs
