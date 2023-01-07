@@ -9,28 +9,29 @@ Demonstrate how to structure a project, build Python packages, unit testing, Git
 Minimal-Example
 ├── README.md
 ├── data
-│   └── the-zen-of-python.txt
+│   └── the-zen-of-python.txt
 ├── docs
-│   ├── Makefile
-│   ├── build
-│   ├── make.bat
-│   └── source
-│       ├── _static
-│       ├── _templates
-│       ├── conf.py
-│       └── index.rst
+│   ├── Makefile
+│   ├── build
+│   ├── make.bat
+│   └── source
+│       ├── _static
+│       ├── _templates
+│       ├── conf.py
+│       └── index.rst
 ├── pyproject.toml
 ├── src
-│   └── example
-│       ├── __init__.py
-│       ├── __pycache__
-│       │   ├── __init__.cpython-39.pyc
-│       │   └── welcome.cpython-39.pyc
-│       └── welcome.py
+│   └── example
+│       ├── __init__.py
+│       ├── __pycache__
+│       │   ├── __init__.cpython-39.pyc
+│       │   └── welcome.cpython-39.pyc
+│       └── welcome.py
 └── test
     └── test_greeting.py
 
 11 directories, 12 files
+
 
 ## Building a Python Package
 
