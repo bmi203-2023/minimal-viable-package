@@ -18,11 +18,30 @@ extensions = []
 
 templates_path = ['_templates']
 exclude_patterns = []
+master_doc = 'index' 
 
 
+# -- General configuration
 
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+extensions = [
+    'sphinx.ext.duration',
+    'sphinx.ext.doctest',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.intersphinx',
+]
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/3/', None),
+    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
+}
+intersphinx_disabled_domains = ['std']
+
+templates_path = ['_templates']
+
+# -- Options for HTML output
+
+html_theme = 'sphinx_rtd_theme'
+
+# -- Options for EPUB output
+epub_show_urls = 'footnote'
