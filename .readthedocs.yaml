@@ -9,9 +9,18 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.11"
-  jobs:
-    pre_create_environment:
-    - echo "pip install ."
+  # jobs:
+  #   pre_create_environment:
+  #   - echo "pip install ."
+
+python:
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
+    - method: pip
+      path: package
 
 # # Build documentation in the docs/ directory with Sphinx
 # sphinx:
