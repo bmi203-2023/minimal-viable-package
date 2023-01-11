@@ -9,6 +9,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath('../../src/example'))
+sys.path.insert(0, os.path.abspath('../../src/'))
 
 project = 'Minimal-Example'
 copyright = '2023, Andrew Blair'
