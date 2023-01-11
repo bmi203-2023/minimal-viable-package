@@ -11,13 +11,8 @@ Welcome to BMI-203!
    :caption: Contents:
 
 example
+modules
 
-.. example module
-.. ==============
-.. .. automodule:: example
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
 
 .. .. automodule:: example.welcome
 ..     :members:
