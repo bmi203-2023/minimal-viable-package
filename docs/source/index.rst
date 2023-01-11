@@ -9,5 +9,5 @@ Welcome to BMI-203!
 
 .. toctree::
    :maxdepth: 2
-
-   example
+   
+   modules
