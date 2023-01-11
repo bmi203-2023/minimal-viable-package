@@ -11,8 +11,6 @@ Welcome to BMI-203!
    :caption: Contents:
 
 example
-modules
-
 
 .. .. automodule:: example.welcome
 ..     :members:
