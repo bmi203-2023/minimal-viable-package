@@ -24,9 +24,6 @@ Minimal-Example
 ├── src
 │   └── example
 │       ├── __init__.py
-│       ├── __pycache__
-│       │   ├── __init__.cpython-39.pyc
-│       │   └── welcome.cpython-39.pyc
 │       └── welcome.py
 └── test
     └── test_greeting.py
