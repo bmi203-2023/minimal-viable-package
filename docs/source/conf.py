@@ -36,7 +36,8 @@ master_doc = 'index'
 #     'sphinx.ext.intersphinx',
 # ]
 
-extensions = ['sphinx.ext.autodoc']
+extensions = ['sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.ext.autodoc']
+
 
 
 intersphinx_mapping = {
