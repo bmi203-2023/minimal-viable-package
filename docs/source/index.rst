@@ -6,9 +6,9 @@
 Welcome to BMI-203!
 ===========================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+.. .. toctree::
+..    :maxdepth: 2
+..    :caption: Contents:
 
 .. automodule:: example.welcome
     :members:
