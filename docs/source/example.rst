@@ -7,15 +7,15 @@ Submodules
 example.welcome module
 ----------------------
 
-.. autoclass:: example.welcome
+.. automodule:: example.welcome
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. Module contents
-.. ---------------
+Module contents
+---------------
 
-.. .. automodule:: example
-..    :members:
-..    :undoc-members:
-..    :show-inheritance:
+.. automodule:: example
+   :members:
+   :undoc-members:
+   :show-inheritance:

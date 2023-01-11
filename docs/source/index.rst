@@ -6,12 +6,8 @@
 Welcome to BMI-203!
 ===========================================
 
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
-   example
 
-.. .. automodule:: example.welcome
-..     :members:
-..     :undoc-members:
-..     :show-inheritance:
+   example
