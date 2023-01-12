@@ -17,4 +17,4 @@ dependencies = ["pytest", "numpy", "scipy", "matplotlib", "scikit-learn", "sphin
 source = ["src"]
 
 [project.urls]
-Home = "https://github.com/bmi203-2023/Minimal-Example"
+Home = "https://github.com/bmi203-2023/Minimal-Viable-Package"

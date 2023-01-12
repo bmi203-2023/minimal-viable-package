@@ -1,7 +1,7 @@
 ![BuildStatus](https://github.com/bmi203-2023/Minimal-Example/actions/workflows/main.yml/badge.svg?event=push)
 [![Documentation Status](https://readthedocs.org/projects/minimal-example/badge/?version=latest)](https://minimal-example.readthedocs.io/en/latest/?badge=latest)
 
-# Minimal-Example
+# Minimal-Viable-Package
 Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, package managers, distributions, containers, and Read the Docs. We intend the README/Tutorial suggestions to be read and followed linearly.
 
 ## Project Structure
