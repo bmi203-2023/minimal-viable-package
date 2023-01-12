@@ -2,7 +2,7 @@
 [![Documentation Status](https://readthedocs.org/projects/minimal-example/badge/?version=latest)](https://minimal-example.readthedocs.io/en/latest/?badge=latest)
 
 # Minimal-Example
-Demonstrate how to structure a project, build Python packages, unit testing, GitHub Actions, package managers, distributions, containers, and Read the Docs.
+Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, package managers, distributions, containers, and Read the Docs.
 
 ## Project Structure
 
@@ -36,17 +36,67 @@ To create a project directory tree as seen above for your README, please follow 
 $ brew install tree
 $ tree Minimal-Example -o tree.md
 ```
-For more reference material, here are a few helpful links:
+For more references on project directory structure/organization, here are a few helpful links:
 * [A Practical Guide to Setuptools and Pyproject.toml](https://godatadriven.com/blog/a-practical-guide-to-setuptools-and-pyproject-toml/)
 
 ## Building a Python Package
 
+We can automate the majority of building a Python package, however, there are a few starting steps to consider. Here we'll outline the best practices (we're aware of) to simplify the process.
+
+**1. Install conda**
+
+**2. Create a clean environment and activate it**
+
+```bash
+$ conda create --name minimal_example python=3.9
+$ conda activate minimal_example
+```
+
+**3. Install the minimal depedencies for unit testing**
+
+```bash
+$
+```
+
+** Create a pyproject.toml in the working directory that specifies the package's build system.**
+
+```python
+[build-system]
+requires = [
+	"flit_core >=3.2,<4",
+	"python_version >= '3.9'"
+	]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "<your name>"
+authors = [{name = "<name>", email = "<email>"}]
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+dependencies = ["pytest", "numpy", "scipy", "matplotlib", "scikit-learn", "sphinx"]
+
+[tool.coverage.run]
+source = ["src"] # parent directory of package
+
+[project.urls]
+Home = "https://github.com/<your git handle or organization>/<repository name>"
+````
+
+For more references on Python packaging, here are a few helpful links:
+* [A pyproject.toml Developer's Cheat Sheet](https://betterprogramming.pub/a-pyproject-toml-developers-cheat-sheet-5782801fb3ed)
+
 ## Unit Testing
+
+
+
 
 ## GitHub Actions
 
+
 ## Package Managers, Distributions, & Containers
 
+* [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 * [Homebrew](https://brew.sh/)
 
 ## Read the Docs
