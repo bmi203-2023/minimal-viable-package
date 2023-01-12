@@ -5,7 +5,7 @@
 Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, package managers, distributions, containers, and Read the Docs.
 
 ## Project Structure
-A minimal example of a **complete** Python package's working directory, will look something like below. In this README tutorial, we'll review how to implement this as hassle free (as we're aware).
+A minimal example of a **complete** Python package's working directory, will look like something below. In this README tutorial, we'll review how to implement this as hassle free (as we're aware).
 
 ```bash
 Minimal-Example # Working Directory
@@ -60,6 +60,7 @@ $ conda activate minimal_example
 ```
 
 **4. Create a pyproject.toml in the working directory that specifies the package's build system.**
+
 ```python
 [build-system]
 requires = [
@@ -76,7 +77,6 @@ classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
 dependencies = ["pytest", "numpy", "scipy", "matplotlib", "scikit-learn", "sphinx"]
 
-
 [tool.coverage.run]
 source = ["src"] # parent directory of package
 
@@ -88,8 +88,6 @@ For more references on Python packaging, here are a few helpful links:
 * [A pyproject.toml Developer's Cheat Sheet](https://betterprogramming.pub/a-pyproject-toml-developers-cheat-sheet-5782801fb3ed)
 
 ## Unit Testing
-
-
 
 
 ## GitHub Actions
