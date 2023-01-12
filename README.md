@@ -31,12 +31,14 @@ Minimal-Example # Working Directory
 └── test # The test directory contains all of the unit testing material.
     └── test_greeting.py
 ```
-To create a project directory tree as seen above for your README , please follow these commands:
+To create a project directory tree as seen above for your README, please follow these commands:
 
 ```bash
 $ brew install tree
 $ tree Minimal-Example -o tree.md
 ```
+
+Brew is a package manager for macOS. Please see the
 
 ## Building a Python Package
 
@@ -44,7 +46,7 @@ $ tree Minimal-Example -o tree.md
 
 ## GitHub Actions
 
-## Distributions & Containers
+## Package Managers, Distributions, & Containers
 
 * [Homebrew](https://brew.sh/)
 
