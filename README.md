@@ -2,7 +2,7 @@
 [![Documentation Status](https://readthedocs.org/projects/minimal-example/badge/?version=latest)](https://minimal-example.readthedocs.io/en/latest/?badge=latest)
 
 # Minimal-Example
-Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, package managers, distributions, containers, and Read the Docs.
+Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, package managers, distributions, containers, and Read the Docs. We intend the README/Tutorial suggestions to be read and followed linearly.
 
 ## Project Structure
 A minimal example of a **complete** Python package's working directory, will look like something below. In this README tutorial, we'll review how to build this as hassle free (as we're aware of).
@@ -125,7 +125,21 @@ $ cd Minimal-Example
 $ mkdir test
 $ touch test_greeting.py # name the modules/submodule you're evaluating
 ```
-In the next section, we'll review our unit test suggestions.
+In the next section, we'll review our unit test suggestions. Assuming you made and populated the data folder, at this point your working directory should look like this:
+
+```bash
+Minimal-Example # Working Directory
+├── README.md
+├── data # A data directory for any relevant data used for unit testing, training, etc.
+│   └── the-zen-of-python.txt
+├── pyproject.toml # Definition of build process of the package.
+├── src # The src directory contains all of the source material for building the project.
+│   └── example # The Python example package directory.
+│       ├── __init__.py # This makes the directory a package.
+│       └── welcome.py # The example's welcome module.
+└── test # The test directory contains all of the unit testing material.
+    └── test_greeting.py
+```
 
 For more references on Python packaging, here are a few helpful links:
 * [Setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init)
