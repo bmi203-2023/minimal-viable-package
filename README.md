@@ -41,7 +41,7 @@ For more references on project directory structure/organization, here are a few 
 
 ## Building a Python Package
 
-We can automate the majority of building a Python package, however, there are a few starting steps to consider. Here we'll outline the best practices (we're aware of) to simplify the process.
+We can automate the majority of building a Python package, however, there are a few starting steps to consider. Here we'll outline the best practices (that we're aware of) to simplify the process.
 
 **1. Install conda**
 
@@ -55,10 +55,10 @@ $ conda activate minimal_example
 **3. Install the minimal depedencies for unit testing**
 
 ```bash
-$
+(minimal_example)$ conda install -c conda-forge flit
 ```
 
-** Create a pyproject.toml in the working directory that specifies the package's build system.**
+**4. Create a pyproject.toml in the working directory that specifies the package's build system.**
 
 ```python
 [build-system]
@@ -85,6 +85,7 @@ Home = "https://github.com/<your git handle or organization>/<repository name>"
 
 For more references on Python packaging, here are a few helpful links:
 * [A pyproject.toml Developer's Cheat Sheet](https://betterprogramming.pub/a-pyproject-toml-developers-cheat-sheet-5782801fb3ed)
+```
 
 ## Unit Testing
 
