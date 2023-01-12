@@ -5,7 +5,7 @@
 Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, package managers, distributions, containers, and Read the Docs.
 
 ## Project Structure
-A minimal example of a **complete** Python package's working directory, will look like something below. In this README tutorial, we'll review how to implement this as hassle free (as we're aware).
+A minimal example of a **complete** Python package's working directory, will look like something below. In this README tutorial, we'll review how to build this as hassle free (as we're aware).
 
 ```bash
 Minimal-Example # Working Directory
@@ -42,24 +42,36 @@ For more references on project directory structure/organization, here are a few 
 
 ## Building a Python Package
 
-We can automate the majority of building a Python package, however, there are a few starting steps to consider. Here we'll outline the best practices (that we're aware of) to simplify the process.
+We can automate the majority of building a Python package, however, there are a few starting steps to consider. Here we'll outline the best practices (that again we're aware of) to simplify the process.
 
-**1. Install conda**
+**1. Create a repository**
 
-**2. Create a clean environment and activate it**
+```bash
+$ mkdir Minimal-Example
+$ cd Minimal-Example
+$ git init
+$ touch README.md
+$ echo "# Minimal-Example" > README.md
+$ git add README.md
+$ git commit -m "Initial commit with README"
+$ git push
+```
+**2. Install conda**
+
+**3. Create a clean environment and activate it**
 
 ```bash
 $ conda create --name minimal_example python=3.9
 $ conda activate minimal_example
 ```
 
-**3. Install the minimal depedencies for unit testing**
+**4. Install the minimal depedencies for unit testing**
 
 ```bash
 (minimal_example)$ conda install -c conda-forge flit
 ```
 
-**4. Create a pyproject.toml in the working directory that specifies the package's build system.**
+**5. Create a pyproject.toml in the working directory that specifies the package's build system. Update the relevant fields with <your info>.**
 
 ```python
 [build-system]
@@ -83,8 +95,11 @@ source = ["src"] # parent directory of package
 [project.urls]
 Home = "https://github.com/<your git handle or organization>/<repository name>"
 ```
+6.
+
 
 For more references on Python packaging, here are a few helpful links:
+* [Setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init)
 * [A pyproject.toml Developer's Cheat Sheet](https://betterprogramming.pub/a-pyproject-toml-developers-cheat-sheet-5782801fb3ed)
 
 ## Unit Testing
