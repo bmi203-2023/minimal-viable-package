@@ -125,7 +125,7 @@ $ cd Minimal-Example
 $ mkdir test
 $ touch test_greeting.py # name the modules/submodule you're evaluating
 ```
-For example, here we 
+In the next section, we'll review our unit test suggestions.
 
 For more references on Python packaging, here are a few helpful links:
 * [Setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init)
