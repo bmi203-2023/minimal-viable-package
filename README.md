@@ -5,7 +5,7 @@
 Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, package managers, distributions, containers, and Read the Docs.
 
 ## Project Structure
-A minimal example of a Python package's working directory, will look something like this:
+A minimal example of a **complete** Python package's working directory, will look something like below. In this README tutorial, we'll review how to implement this as hassle free (as we're aware).
 
 ```bash
 Minimal-Example # Working Directory
