@@ -32,7 +32,7 @@ Minimal-Example # Working Directory
     └── test_greeting.py
 ```
 
-You might notice there are a few files missing, namely the ones that start with '.', are considered hidden folders in Unix-like operating systems. In this README tutorial, we'll review the directory .github and the files .gitignore and .readthedocs.yaml.
+You might notice a few files are missing, like the ones that start with a period. These are considered hidden folders in Unix-like operating systems, and in this README tutorial, we'll review the directory .github and the files .gitignore and .readthedocs.yaml.
 
 To create a project directory tree as seen above for your README, please follow these commands:
 
