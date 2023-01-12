@@ -6,12 +6,13 @@ Demonstrate how to structure a project, build Python packages, unit testing, Git
 
 ## Project Structure
 
+
 ```bash
-Minimal-Example
+Minimal-Example # Working Directory
 ├── README.md
 ├── data
 │   └── the-zen-of-python.txt
-├── docs
+├── docs # This makes the module's ReadTheDocs.
 │   ├── Makefile
 │   ├── build
 │   ├── make.bat
@@ -19,16 +20,22 @@ Minimal-Example
 │       ├── _static
 │       ├── _templates
 │       ├── conf.py
-│       └── index.rst
-├── pyproject.toml
-├── src
-│   └── example
-│       ├── __init__.py
-│       └── welcome.py
-└── test
+│       ├── example.rst
+│       ├── index.rst
+│       └── modules.rst
+├── pyproject.toml # Definition of build process of the package.
+├── src # The src directory contains all of the source material for building the project.
+│   └── example # The Python example package directory.
+│       ├── __init__.py # This makes the directory a package.
+│       └── welcome.py # The example's welcome module.
+└── test # The test directory contains all of the unit testing material.
     └── test_greeting.py
+```
+To create a project directory tree as seen above for your README , please follow these commands:
 
-11 directories, 12 files
+```bash
+$ brew install tree
+$ tree Minimal-Example -o tree.md
 ```
 
 ## Building a Python Package
@@ -38,6 +45,8 @@ Minimal-Example
 ## GitHub Actions
 
 ## Distributions & Containers
+
+* [Homebrew](https://brew.sh/)
 
 ## Read the Docs
 
