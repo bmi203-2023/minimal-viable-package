@@ -2,15 +2,14 @@
 [![Documentation Status](https://readthedocs.org/projects/minimal-example/badge/?version=latest)](https://minimal-example.readthedocs.io/en/latest/?badge=latest)
 
 # Minimal-Example
-Demonstrate how to structure a project, build Python packages, unit testing, GitHub Actions, distributions & containers, and Read the Docs.
+Demonstrate how to structure a project, build Python packages, unit testing, GitHub Actions, package managers, distributions, containers, and Read the Docs.
 
 ## Project Structure
-
 
 ```bash
 Minimal-Example # Working Directory
 ├── README.md
-├── data
+├── data # A data directory for any relevant data used for unit testing, training, etc.
 │   └── the-zen-of-python.txt
 ├── docs # This makes the module's ReadTheDocs.
 │   ├── Makefile
@@ -37,8 +36,8 @@ To create a project directory tree as seen above for your README, please follow 
 $ brew install tree
 $ tree Minimal-Example -o tree.md
 ```
-
-Brew is a package manager for macOS. Please see the
+For more reference material, here are a few helpful links:
+* [A Practical Guide to Setuptools and Pyproject.toml](https://godatadriven.com/blog/a-practical-guide-to-setuptools-and-pyproject-toml/)
 
 ## Building a Python Package
 
