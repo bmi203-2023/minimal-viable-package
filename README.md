@@ -125,7 +125,7 @@ $ cd Minimal-Example
 $ mkdir test
 $ touch test_greeting.py # name the modules/submodule you're evaluating
 ```
-In the next section, we'll review our unit test suggestions. Assuming you made and populated the data folder, at this point your working directory should look like this:
+In the next section, we'll review our unit test suggestions. At this point your working directory should look like this:
 
 ```bash
 Minimal-Example # Working Directory
@@ -140,6 +140,7 @@ Minimal-Example # Working Directory
 └── test # The test directory contains all of the unit testing material.
     └── test_greeting.py
 ```
+*Assuming you made and populated the data folder.*
 
 For more references on Python packaging, here are a few helpful links:
 * [Setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init)
