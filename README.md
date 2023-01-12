@@ -78,7 +78,7 @@ $ touch pyproject.toml
 $ vim pyproject.toml 
 ```
 
-Copy/Paste and update the relevant fields with **<your info>.**
+Copy/Paste and update the relevant fields with <**your info**>.
 
 ```python
 [build-system]
