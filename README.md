@@ -116,9 +116,9 @@ $ touch __init__.py
 $ touch welcome.py
 ```
 
-**7. Develop your package and modules. See this repository's simple example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
+**7. Iteratively develop your package and modules. See this repository's simple example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
 
-**8. **
+**8. As you iteratively develop each module and submodule, consider your edge cases and design rationally explained unit tests to assess them.**
 
 For more references on Python packaging, here are a few helpful links:
 * [Setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init)
