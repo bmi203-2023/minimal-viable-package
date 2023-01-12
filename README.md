@@ -159,7 +159,7 @@ For more references on unit tests using **pytest**, here are a few helpful links
 Now that all of our configuration and recipe files have been made, we can automate our build and testing.
 
 For more references related to GitHub Actions, here are a few helpful links:
-*[Adding a workflow status badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)
+* [Adding a workflow status badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)
 
 ## Package Managers, Distributions, & Containers
 * [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
