@@ -153,11 +153,9 @@ For more references on unit tests using **pytest**, here are a few helpful links
 * [pytest: helps you write better programs](https://docs.pytest.org/en/7.2.x/)
 
 ## GitHub Actions
-
-
+Now that all of our configuration and recipe files have been made, we can begin to automate the
 
 ## Package Managers, Distributions, & Containers
-
 * [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 * [Homebrew](https://brew.sh/)
 
