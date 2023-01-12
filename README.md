@@ -156,7 +156,10 @@ For more references on unit tests using **pytest**, here are a few helpful links
 * [pytest: helps you write better programs](https://docs.pytest.org/en/7.2.x/)
 
 ## GitHub Actions
-Now that all of our configuration and recipe files have been made, we can begin to automate our build and testing.
+Now that all of our configuration and recipe files have been made, we can automate our build and testing.
+
+For more references related to GitHub Actions, here are a few helpful links:
+*[Adding a workflow status badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)
 
 ## Package Managers, Distributions, & Containers
 * [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
