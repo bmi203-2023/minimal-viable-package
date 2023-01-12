@@ -73,6 +73,8 @@ $ conda activate minimal_example
 
 **5. Create a pyproject.toml in the working directory that specifies the package's build system.**
 
+Using the terminal or your favorite IDE, please follow these steps:
+
 ```bash
 $ touch pyproject.toml
 $ vim pyproject.toml 
