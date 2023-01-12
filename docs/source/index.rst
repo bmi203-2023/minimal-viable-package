@@ -3,10 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to BMI-203!
+UCSF BMI-203: Biocomputing Algorithms
 ===========================================
 
-
+Minimal Viable Package 
+======================
 .. toctree::
    :maxdepth: 2
    
