@@ -116,7 +116,8 @@ $ touch __init__.py
 $ touch welcome.py
 ```
 
-**7. **
+**7. Develop your package and modules. See this repository's minimal example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
+
 **8. **
 
 For more references on Python packaging, here are a few helpful links:
