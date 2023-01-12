@@ -58,14 +58,14 @@ $ git push
 ```
 **2. Install conda**
 
-**3. Create a clean environment and activate it**
+**3. Create a clean environment and activate it.**
 
 ```bash
 $ conda create --name minimal_example python=3.9
 $ conda activate minimal_example
 ```
 
-**4. Install the minimal depedencies for unit testing**
+**4. Install the minimal depedency flit for unit testing.**
 
 ```bash
 (minimal_example)$ conda install -c conda-forge flit
@@ -105,8 +105,19 @@ source = ["src"] # parent directory of package
 Home = "https://github.com/<your git handle or organization>/<repository name>"
 ```
 
-**6. **
+**6. Create a source directory for your package and modules.**
 
+```bash
+$ mkdir src
+$ cd src
+$ mkdir example
+$ cd example
+$ touch __init__.py
+$ touch welcome.py
+```
+
+**7. **
+**8. **
 
 For more references on Python packaging, here are a few helpful links:
 * [Setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init)
