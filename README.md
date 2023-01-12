@@ -116,7 +116,7 @@ $ touch __init__.py
 $ touch welcome.py
 ```
 
-**7. Develop your package and modules. See this repository's minimal example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
+**7. Develop your package and modules. See this repository's simple example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
 
 **8. **
 
