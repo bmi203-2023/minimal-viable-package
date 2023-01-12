@@ -118,7 +118,14 @@ $ touch welcome.py
 
 **7. Iteratively develop your package and modules. See this repository's simple example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
 
-**8. As you iteratively develop each module and submodule, consider your edge cases and design rationally explained unit tests to assess them.**
+**8. As you iteratively develop each module and submodule, consider your edge cases and design rationally explained unit tests to assess them. We suggest naming your unit tests by their associated module/submodule naming convention.**
+
+```bash
+$ cd Minimal-Example
+$ mkdir test
+$ touch test_greeting.py # name the modules/submodule you're evaluating
+```
+For example, here we 
 
 For more references on Python packaging, here are a few helpful links:
 * [Setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init)
