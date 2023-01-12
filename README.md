@@ -149,7 +149,11 @@ For more references on Python packaging, here are a few helpful links:
 ## Unit Testing
 In our Minimal-Example unit test submodule example (e.g., the Greeting class in welcome.py or welcome.Greeting()), we evaluate class attributes and methods based on our set parameters and expectations. Please find the unit test [here](https://github.com/bmi203-2023/Minimal-Example/blob/master/test/test_greeting.py).
 
+For more references on unit tests using **pytest**, here are a few helpful links:
+* [pytest: helps you write better programs](https://docs.pytest.org/en/7.2.x/)
+
 ## GitHub Actions
+
 
 
 ## Package Managers, Distributions, & Containers
