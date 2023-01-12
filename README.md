@@ -59,7 +59,6 @@ $ conda activate minimal_example
 ```
 
 **4. Create a pyproject.toml in the working directory that specifies the package's build system.**
-
 ```python
 [build-system]
 requires = [
@@ -76,16 +75,16 @@ classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
 dependencies = ["pytest", "numpy", "scipy", "matplotlib", "scikit-learn", "sphinx"]
 
+
 [tool.coverage.run]
 source = ["src"] # parent directory of package
 
 [project.urls]
 Home = "https://github.com/<your git handle or organization>/<repository name>"
-````
+```
 
 For more references on Python packaging, here are a few helpful links:
 * [A pyproject.toml Developer's Cheat Sheet](https://betterprogramming.pub/a-pyproject-toml-developers-cheat-sheet-5782801fb3ed)
-```
 
 ## Unit Testing
 
