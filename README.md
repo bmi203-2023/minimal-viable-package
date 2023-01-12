@@ -31,6 +31,9 @@ Minimal-Example # Working Directory
 └── test # The test directory contains all of the unit testing material.
     └── test_greeting.py
 ```
+
+You might notice there are a few files missing, namely the ones that start with '.', are considered hidden folders in Unix-like operating systems. In this README tutorial, we'll review the directory .github and the files .gitignore and .readthedocs.yaml.
+
 To create a project directory tree as seen above for your README, please follow these commands:
 
 ```bash
@@ -153,7 +156,7 @@ For more references on unit tests using **pytest**, here are a few helpful links
 * [pytest: helps you write better programs](https://docs.pytest.org/en/7.2.x/)
 
 ## GitHub Actions
-Now that all of our configuration and recipe files have been made, we can begin to automate the
+Now that all of our configuration and recipe files have been made, we can begin to automate our build and testing.
 
 ## Package Managers, Distributions, & Containers
 * [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
