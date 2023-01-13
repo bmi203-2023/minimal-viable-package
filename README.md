@@ -180,7 +180,7 @@ For more references on Python packaging, here are a few helpful links:
 * [A pyproject.toml Developer's Cheat Sheet](https://betterprogramming.pub/a-pyproject-toml-developers-cheat-sheet-5782801fb3ed)
 
 ## Unit Testing
-In our Minimal-Example unit test submodule example (e.g., the Greeting class in welcome.py or welcome.Greeting()), we evaluate class attributes and methods based on our set parameters and expectations. Please find the unit test [here](https://github.com/bmi203-2023/Minimal-Example/blob/master/test/test_greeting.py).
+In our minimal-viable-package unit test submodule example (e.g., the Greeting class in welcome.py or welcome.Greeting()), we evaluate class attributes and methods based on our set parameters and expectations. Please find the unit test [here](https://github.com/bmi203-2023/Minimal-Example/blob/master/test/test_greeting.py).
 
 For more references on **unit testing** using **pytest**, here are a few helpful links:
 * [pytest: helps you write better programs](https://docs.pytest.org/en/7.2.x/)
@@ -190,7 +190,7 @@ Now that all of our configuration and recipe files have been made, we can automa
 
 ```yaml
 # This is a basic workflow to help you get started with Actions
-name: Minimal-Viable-Package
+name: <your package's name>
 
 # Controls when the workflow will run
 on:
