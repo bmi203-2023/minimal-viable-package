@@ -40,7 +40,7 @@ To create a project directory tree as seen above for your README, please follow 
 $ brew install tree
 $ tree Minimal-Example -o tree.md
 ```
-For more references on project directory structure/organization, here are a few helpful links:
+For more references on **project directory** structure/organization for building a Python package, here are a few helpful links:
 * [A Practical Guide to Setuptools and Pyproject.toml](https://godatadriven.com/blog/a-practical-guide-to-setuptools-and-pyproject-toml/)
 
 ## Building a Python Package
@@ -157,13 +157,13 @@ For more references on Python packaging, here are a few helpful links:
 ## Unit Testing
 In our Minimal-Example unit test submodule example (e.g., the Greeting class in welcome.py or welcome.Greeting()), we evaluate class attributes and methods based on our set parameters and expectations. Please find the unit test [here](https://github.com/bmi203-2023/Minimal-Example/blob/master/test/test_greeting.py).
 
-For more references on unit tests using **pytest**, here are a few helpful links:
+For more references on **unit testing** using **pytest**, here are a few helpful links:
 * [pytest: helps you write better programs](https://docs.pytest.org/en/7.2.x/)
 
 ## GitHub Actions
 Now that all of our configuration and recipe files have been made, we can automate our build and testing.
 
-```yml
+```yaml
 # This is a basic workflow to help you get started with Actions
 name: Minimal-Viable-Package
 
@@ -199,7 +199,7 @@ jobs:
         run: python -m pytest -v test/*
 ```
 
-For more references related to GitHub Actions, here are a few helpful links:
+For more references related to **GitHub Actions**, here are a few helpful links:
 * [Adding a workflow status badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)
 
 ## Package Managers, Distributions, & Containers
