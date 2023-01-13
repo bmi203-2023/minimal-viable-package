@@ -121,6 +121,11 @@ $ touch welcome.py
 
 **7. Iteratively develop your package and modules. See this repository's simple example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
 
+```bash
+$ cd Minimal-Example
+$ flit install -s # builds your package in editable or development mode
+```
+
 **8. As you iteratively develop each module and submodule, consider your edge cases and design rationally explained unit tests to assess them. We suggest naming your unit tests by their associated module/submodule naming convention.**
 
 ```bash
@@ -157,6 +162,42 @@ For more references on unit tests using **pytest**, here are a few helpful links
 
 ## GitHub Actions
 Now that all of our configuration and recipe files have been made, we can automate our build and testing.
+
+```yml
+# This is a basic workflow to help you get started with Actions
+name: Minimal-Viable-Package
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install .
+      
+      - name: Run unit tests
+        run: python -m pytest -v test/*
+```
 
 For more references related to GitHub Actions, here are a few helpful links:
 * [Adding a workflow status badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)
