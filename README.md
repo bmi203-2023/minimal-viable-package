@@ -46,8 +46,8 @@ In this section of the tutorial, let's start from
 **1. Create a repository**
 
 ```bash
-$ mkdir Minimal-Viable-Package
-$ cd Minimal-Viable-Package
+$ mkdir minimal-viable-package
+$ cd minimal-viable-package
 $ git init
 $ touch README.md
 $ echo "# Minimal-Viable-Package" > README.md
@@ -64,13 +64,32 @@ $ conda create --name mvp_env python=3.9
 $ conda activate mvp_env
 ```
 
+Note: The mvp_env is shorthand for our minimal-viable-package environment.
+
 **4. Install the minimal depedencies for unit testing and building our documentation.**
+
+Here's how we would install each dependency individually:
 
 ```bash
 (mvp_env)$ conda install -c conda-forge flit
 (mvp_env)$ conda install -c conda-forge tree
 (mvp_env)$ conda install -c anaconda sphinx
 (mvp_env)$ conda install -c conda-forge sphinx_rtd_theme
+```
+
+Now that we have a minimal environment for our package, let's export the dependencies to a **yml** file, so we don't have to do this again.
+
+```bash
+(mvp_env)$ cd minimal-viable-package
+(mvp_env)$ mkdir env # Create an (env)ironment directory for our package to help make it more reproducible
+(mvp_env)$ cd env
+(mvp_env)$ conda env export -n mvp_env > mvp_env.yml
+```
+
+```bash
+$ git clone https://github.com/bmi203-2023/minimal-viable-package.git
+$ cd env
+$ conda env create -f environment.yml
 ```
 
 **5. Create a pyproject.toml in the working directory that specifies the package's build system.**
@@ -121,21 +140,21 @@ $ touch welcome.py
 **7. Iteratively develop your package and modules. See this repository's simple example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
 
 ```bash
-$ cd Minimal-Viable-Package
+$ cd minimal-viable-package
 $ flit install -s # builds your package in editable or development mode
 ```
 
 **8. As you iteratively develop each module and submodule, consider your edge cases and design rationally explained unit tests to assess them. We suggest naming your unit tests by their associated module/submodule naming convention.**
 
 ```bash
-$ cd Minimal-Viable-Package
+$ cd minimal-viable-package
 $ mkdir test
 $ touch test_greeting.py # name the modules/submodule you're evaluating
 ```
 In the next section, we'll review our unit test suggestions. At this point your working directory should look like this:
 
 ```bash
-Minimal-Viable-Package # Working Directory
+minimal-viable-package # Working Directory
 ├── README.md
 ├── data # A data directory for any relevant data used for unit testing, training, etc.
 │   └── the-zen-of-python.txt
@@ -152,8 +171,8 @@ Minimal-Viable-Package # Working Directory
 To create a project directory tree as seen above for your README, please follow these commands:
 
 ```bash
-$ cd Minimal-Viable-Package
-$ tree Minimal-Viable-Package -o tree.md
+$ cd minimal-viable-package
+$ tree minimal-viable-package -o tree.md
 ```
 
 For more references on Python packaging, here are a few helpful links:
