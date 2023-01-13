@@ -86,10 +86,13 @@ Now that we have a minimal environment for our package, let's export the depende
 (mvp_env)$ conda env export -n mvp_env > mvp_env.yml
 ```
 
+For example, if you cloned this repository and had conda installed, here's how you would create the environment.
+
 ```bash
 $ git clone https://github.com/bmi203-2023/minimal-viable-package.git
 $ cd env
 $ conda env create -f environment.yml
+$ conda activate mvp_env
 ```
 
 **5. Create a pyproject.toml in the working directory that specifies the package's build system.**
