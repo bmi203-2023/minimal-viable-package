@@ -8,7 +8,7 @@ Demonstrate the minimal concepts/training to structure a project, build Python p
 A minimal example of a **complete** Python package's working directory, will look like something below. In this README tutorial, we'll review how to build this as hassle free (as we're aware of).
 
 ```bash
-Minimal-Example # Working Directory
+Minimal-Viable-Package # Working Directory
 ├── README.md
 ├── data # A data directory for any relevant data used for unit testing, training, etc.
 │   └── the-zen-of-python.txt
@@ -34,12 +34,6 @@ Minimal-Example # Working Directory
 
 You might notice a few files are missing, like the ones that start with a period. These are considered hidden folders in Unix-like operating systems, and in this README tutorial, we'll review the directory **.github** and the files **.gitignore** and **.readthedocs.yaml**.
 
-To create a project directory tree as seen above for your README, please follow these commands:
-
-```bash
-$ brew install tree
-$ tree Minimal-Example -o tree.md
-```
 For more references on **project directory** structure/organization for building a Python package, here are a few helpful links:
 * [A Practical Guide to Setuptools and Pyproject.toml](https://godatadriven.com/blog/a-practical-guide-to-setuptools-and-pyproject-toml/)
 
@@ -47,14 +41,16 @@ For more references on **project directory** structure/organization for building
 
 We can automate the majority of building a Python package, however, there are a few starting steps to consider. Here we'll outline the best practices (that again we're aware of) to simplify the process.
 
+In this section of the tutorial, let's start from
+
 **1. Create a repository**
 
 ```bash
-$ mkdir Minimal-Example
-$ cd Minimal-Example
+$ mkdir Minimal-Viable-Example
+$ cd Minimal-Viable-Example
 $ git init
 $ touch README.md
-$ echo "# Minimal-Example" > README.md
+$ echo "# Minimal-Viable-Example" > README.md
 $ git add README.md
 $ git commit -m "Initial commit with README"
 $ git push
@@ -64,14 +60,16 @@ $ git push
 **3. Create a clean environment and activate it.**
 
 ```bash
-$ conda create --name minimal_example python=3.9
-$ conda activate minimal_example
+$ conda create --name mvp_env python=3.9
+$ conda activate mvp_env
 ```
 
-**4. Install the minimal depedency flit for unit testing.**
+**4. Install the minimal depedency flit for unit testing and building our documentation.**
 
 ```bash
-(minimal_example)$ conda install -c conda-forge flit
+(mvp_env)$ conda install -c conda-forge flit
+(mvp_env)$ conda install -c anaconda sphinx
+(mvp_env)$ conda install -c conda-forge sphinx_rtd_theme
 ```
 
 **5. Create a pyproject.toml in the working directory that specifies the package's build system.**
@@ -149,6 +147,13 @@ Minimal-Example # Working Directory
     └── test_greeting.py
 ```
 *Assuming you made and populated the data folder.*
+
+To create a project directory tree as seen above for your README, please follow these commands:
+
+```bash
+$ brew install tree
+$ tree Minimal-Viable-Package -o tree.md
+```
 
 For more references on Python packaging, here are a few helpful links:
 * [Setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init)
