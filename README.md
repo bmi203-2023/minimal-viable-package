@@ -41,7 +41,7 @@ For more references on **project directory** structure/organization for building
 
 We can automate the majority of building a Python package, however, there are a few starting steps to consider. Here we'll outline the best practices (that again we're aware of) to simplify the process.
 
-In this section of the tutorial, let's start from
+In this section of the tutorial, we're going to review the minimal steps to create this repository from scratch.
 
 **1. Create a repository**
 
