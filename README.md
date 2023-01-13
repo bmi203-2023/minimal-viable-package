@@ -64,10 +64,11 @@ $ conda create --name mvp_env python=3.9
 $ conda activate mvp_env
 ```
 
-**4. Install the minimal depedency flit for unit testing and building our documentation.**
+**4. Install the minimal depedencies for unit testing and building our documentation.**
 
 ```bash
 (mvp_env)$ conda install -c conda-forge flit
+(mvp_env)$ conda install -c conda-forge tree
 (mvp_env)$ conda install -c anaconda sphinx
 (mvp_env)$ conda install -c conda-forge sphinx_rtd_theme
 ```
