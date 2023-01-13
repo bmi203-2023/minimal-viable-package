@@ -46,11 +46,11 @@ In this section of the tutorial, let's start from
 **1. Create a repository**
 
 ```bash
-$ mkdir Minimal-Viable-Example
-$ cd Minimal-Viable-Example
+$ mkdir Minimal-Viable-Package
+$ cd Minimal-Viable-Package
 $ git init
 $ touch README.md
-$ echo "# Minimal-Viable-Example" > README.md
+$ echo "# Minimal-Viable-Package" > README.md
 $ git add README.md
 $ git commit -m "Initial commit with README"
 $ git push
@@ -121,21 +121,21 @@ $ touch welcome.py
 **7. Iteratively develop your package and modules. See this repository's simple example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
 
 ```bash
-$ cd Minimal-Example
+$ cd Minimal-Viable-Package
 $ flit install -s # builds your package in editable or development mode
 ```
 
 **8. As you iteratively develop each module and submodule, consider your edge cases and design rationally explained unit tests to assess them. We suggest naming your unit tests by their associated module/submodule naming convention.**
 
 ```bash
-$ cd Minimal-Example
+$ cd Minimal-Viable-Package
 $ mkdir test
 $ touch test_greeting.py # name the modules/submodule you're evaluating
 ```
 In the next section, we'll review our unit test suggestions. At this point your working directory should look like this:
 
 ```bash
-Minimal-Example # Working Directory
+Minimal-Viable-Package # Working Directory
 ├── README.md
 ├── data # A data directory for any relevant data used for unit testing, training, etc.
 │   └── the-zen-of-python.txt
@@ -152,7 +152,7 @@ Minimal-Example # Working Directory
 To create a project directory tree as seen above for your README, please follow these commands:
 
 ```bash
-$ brew install tree
+$ cd Minimal-Viable-Package
 $ tree Minimal-Viable-Package -o tree.md
 ```
 
