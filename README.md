@@ -8,28 +8,31 @@ Demonstrate the minimal concepts/training to structure a project, build Python p
 A minimal example of a **complete** Python package's working directory, will look like something below. In this README tutorial, we'll review how to build this as hassle free (as we're aware of).
 
 ```bash
-Minimal-Viable-Package # Working Directory
+minimal-viable-package # The working directory
 ├── README.md
-├── data # A data directory for any relevant data used for unit testing, training, etc.
+├── data # A data directory for any relevant data used for unit testing your package, training a model, etc.
 │   └── the-zen-of-python.txt
-├── docs # This makes the module's ReadTheDocs.
+├── docs  # This makes the module's ReadTheDocs (RTD).
 │   ├── Makefile
 │   ├── build
 │   ├── make.bat
 │   └── source
 │       ├── _static
 │       ├── _templates
-│       ├── conf.py
-│       ├── example.rst
+│       ├── conf.py # RTD configuration file
+        # The reStructuredText (RST) file format is for textual data used in Python programming for documention.
+│       ├── example.rst # The Python package's module and submodule API documentation. The file is named after the module.
 │       ├── index.rst
 │       └── modules.rst
-├── pyproject.toml # Definition of build process of the package.
+├── env # The environment directory for sharing and reproducing the Python package or model. 
+│   └── mvp_env.yml
+├── pyproject.toml # Definition of the build process for the package.
 ├── src # The src directory contains all of the source material for building the project.
 │   └── example # The Python example package directory.
 │       ├── __init__.py # This makes the directory a package.
 │       └── welcome.py # The example's welcome module.
 └── test # The test directory contains all of the unit testing material.
-    └── test_greeting.py
+    └── test_greeting.py # A unit test for the example.welcome submodule greeting
 ```
 
 You might notice a few files are missing, like the ones that start with a period. These are considered hidden folders in Unix-like operating systems, and in this README tutorial, we'll review the directory **.github** and the files **.gitignore** and **.readthedocs.yaml**.
@@ -147,7 +150,7 @@ $ cd minimal-viable-package
 $ flit install -s # builds your package in editable or development mode
 ```
 
-**8. As you iteratively develop each module and submodule, consider your edge cases and design rationally explained unit tests to assess them. We suggest naming your unit tests by their associated module/submodule naming convention.**
+**8. As you iteratively develop each module and submodule, consider your edge cases and design rationally explained unit tests to assess them. We suggest naming your unit tests by their associated module and their test functions as the submodule you're evaluating.**
 
 ```bash
 $ cd minimal-viable-package
@@ -157,17 +160,19 @@ $ touch test_greeting.py # name the modules/submodule you're evaluating
 In the next section, we'll review our unit test suggestions. At this point your working directory should look like this:
 
 ```bash
-minimal-viable-package # Working Directory
+minimal-viable-package # The working directory
 ├── README.md
-├── data # A data directory for any relevant data used for unit testing, training, etc.
+├── data # A data directory for any relevant data used for unit testing your package, training a model, etc.
 │   └── the-zen-of-python.txt
-├── pyproject.toml # Definition of build process of the package.
+├── env # The environment directory for sharing and reproducing the Python package or model. 
+│   └── mvp_env.yml
+├── pyproject.toml # Definition of the build process for the package.
 ├── src # The src directory contains all of the source material for building the project.
 │   └── example # The Python example package directory.
 │       ├── __init__.py # This makes the directory a package.
 │       └── welcome.py # The example's welcome module.
 └── test # The test directory contains all of the unit testing material.
-    └── test_greeting.py
+    └── test_greeting.py # A unit test for the example.welcome submodule greeting
 ```
 *Assuming you made and populated the data folder.*
 
@@ -190,6 +195,25 @@ For more references on **unit testing** using **pytest**, here are a few helpful
 
 ## GitHub Actions
 Now that all of our configuration and recipe files have been made, we can automate our build and testing.
+
+**1. Create a .github/workflows directory tree.**
+
+```bash
+$ cd minimal-viable-project
+$ mkdir .github
+$ cd .github
+$ mkdir workflows
+```
+
+**2. Create a yet another markup language (YAML) file and specify the commands to run whenever code is pushed to the repository (i.e, unit tests, RTD, etc.).**
+
+```bash
+$ cd minimal-viable-project/.github/workflows
+$ touch main.yml
+$ vim main.yml
+```
+
+Copy/Paste and update the relevant fields with <**your info**>.
 
 ```yaml
 # This is a basic workflow to help you get started with Actions
@@ -228,6 +252,7 @@ jobs:
 ```
 
 For more references related to **GitHub Actions**, here are a few helpful links:
+* [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 * [Adding a workflow status badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)
 
 ## Package Managers, Distributions, & Containers
