@@ -52,7 +52,7 @@ We can automate the majority of building a Python package, however, there are a 
 
 In this section of the README tutorial, we're going to review the minimal steps to create this repository from scratch.
 
-**1. Create a repository**
+**1. Create a Git repository for the Python package.**
 
 ```bash
 $ mkdir minimal-viable-package
@@ -64,9 +64,10 @@ $ git add README.md
 $ git commit -m "Initial commit with README"
 $ git push
 ```
+
 **2. Install conda**
 
-**3. Create a clean environment and activate it.**
+**3. Create a clean conda environment and then activate.**
 
 ```bash
 $ conda create --name mvp_env python=3.9
@@ -106,11 +107,12 @@ $ conda deactivate mvp_env # how to deactivate the conda environment
 ```
 **Note**: Keeping the mvp_env activate is not necessary for this tutorial's entire build, documentation, and test cycle. We will specify when to activate the environment. You can leave the environment activated unless you're installing/testing/developing other Python libraries. Otherwise, we suggest deactivating the environment.
 
-**5. Create a pyproject.toml in the working directory that specifies the package's build system.**
+**5. Create a pyproject.toml in the working directory that specifies the package's build system. Let's also add a .gitignore to ignore files we don't want to push.**
 
 Using the terminal or your favorite IDE, please follow these steps:
 
 ```bash
+$ cd minimal-viable-package
 $ touch pyproject.toml
 $ vim pyproject.toml 
 ```
@@ -138,6 +140,20 @@ source = ["src"] # parent directory of package
 
 [project.urls]
 Home = "https://github.com/<your git handle or organization>/<repository name>"
+```
+
+Next let's create **.gitignore** in our working directory to ignore non-essential files when committing/pushing our changes.
+
+```bash
+$ cd minimal-viable-project
+$ touch .gitignore
+```
+
+```.gitignore
+.ipynb_checkpoints/ # jupyter notebook save points
+src/example/__pycache__ # build cache for our Python package
+build/*
+.DS_Store # Desktop services storre, an invisible file on the macOS that's automatically created 
 ```
 
 **6. Create a source directory for your package and modules.**
@@ -262,7 +278,7 @@ $ mkdir workflows
 **2. Create YML file and specify the commands to run whenever your code is pushed to the repository (i.e, unit tests, RTD, etc.).**
 
 ```bash
-$ cd minimal-viable-project/.github/workflows
+$ cd minimal-viable-package/.github/workflows
 $ touch main.yml
 $ vim main.yml
 ```
@@ -308,7 +324,7 @@ jobs:
 **3. Add a workflow status badge to your README to indicate if you're failing or passing.**
 
 ```bash
-$ cd minimal-viable-project
+$ cd minimal-viable-package
 $ vim REAMD.md
 ```
 Copy/Paste and update the relevant fields with <**your info**>.
