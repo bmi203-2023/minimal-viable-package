@@ -40,6 +40,10 @@ You might notice a few files are missing, like the ones that start with a period
 For more references on **project directory** structure/organization for building a Python package, here are a few helpful links:
 * [A Practical Guide to Setuptools and Pyproject.toml](https://godatadriven.com/blog/a-practical-guide-to-setuptools-and-pyproject-toml/)
 
+## Integrated Development Environment (IDE)
+
+This repository was built in [Visual Studio Code](https://code.visualstudio.com/), using the [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring) extension for generating our python docstrings automatically.
+
 ## Building a Python Package
 
 We can automate the majority of building a Python package, however, there are a few starting steps to consider. Here we'll outline the best practices (that again we're aware of) to simplify the process.
@@ -145,13 +149,55 @@ $ touch __init__.py
 $ touch welcome.py
 ```
 
-**7. Iteratively develop your package and modules. See this repository's simple example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
+**7. Iteratively document/develop your package and modules. See this repository's simple example [here](https://github.com/bmi203-2023/Minimal-Example/tree/master/src/example).**
+
+If you're using the Visual Studio Code IDE and the autoDocstring extension, we can automate our docstrings and use type hints to improve readability. 
+
+For example, in the submodule example.welcome.Greeting() we have a class method called **the_zen_of_python** that reads a text file and returns each line of the file's message as an element in a list of strings. We want to parameterize the class method to read the file from any location and return the list to read. To do this we'll set a parameter of type string for a user to indicate the file path. 
+
+Using type hints, we can indicate in the class method definition the type of input parameter (str) and the output type -> a list of strings list[str]:
+
+```python
+def the_zen_of_python(self, read_file: str) -> list[str]:
+```
+
+Now autodocstring can automate the docstring for us to fill in the descriptions. We can enable this by hitting enter after our class method definition, triple quotes, and cmd+shift+2 (for macs).
+
+```python
+def the_zen_of_python(self, read_file: str) -> list[str]:
+    """_summary_
+
+    Args:
+        read_file (str): _description_
+
+    Returns:
+        list[str]: _description_
+    """  
+```
+
+Our completed docstring that Read the Docs can use to automate our Python package's documenation will look like this: 
+
+```python
+def the_zen_of_python(self, read_file: str) -> list[str]:
+  """Reads a text file containing The Zen of Python and returns a list where each element is one line of the 19 aphorisms.
+
+  Args:
+      read_file (str): Path to the txt file containing The Zen of Python.      
+
+  Returns:
+      list[str]: List of strings, where each element is one line of The Zen of Python.
+  """
+  with open(read_file) as f:
+      zen_list = [line.strip() for line in f.readlines()]
+  return zen_list
+```
+
+After we've documented our package, we can begin testing the build of our Python package.
 
 ```bash
 $ cd minimal-viable-package
 $ conda activate mvp_env
 (mvp_env)$ flit install -s # builds your package in editable or development mode
-$ conda deactivate mvp_env
 ```
 
 **8. As you iteratively develop each module and submodule, consider your edge cases and design rationally explained unit tests to assess them. We suggest naming your unit tests by their associated module and their test functions as the submodule you're evaluating.**
@@ -349,7 +395,7 @@ docs
 
 Before we build our documentation, we need to update **conf.py**.
 
-**3. Update the theme and autodoc configuration settings in conf.py.**
+**3. Update the theme, autodoc configuration settings, and sphinx.ext.autodoc references in conf.py.**
 
 ```bash
 $ cd minimal-viable-package/docs/source
@@ -371,7 +417,20 @@ import sys
 sys.path.insert(0, os.path.abspath('../../src/example'))
 ```
 
+In addition, we need to specify the auto directive extensions for every object we want to document in **conf.py**.
 
+```python
+# -- General configuration
+extensions = ['sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.ext.autodoc']
+```
+
+**4. Auto-generate documentation from docstrings in your Python package's source files.***
+
+```bash
+$ cd minimal-viable-package/docs/
+$ conda activate mvp_env
+(mvp_env)$ sphinx-apidoc -f -o source/ ../src/example 
+```
 
 For more references related to **Sphinx-RTD-Tutorial**, here are a few helpful links:
 * [Read the Docs Tutorial](https://docs.readthedocs.io/en/stable/tutorial/index.html)
