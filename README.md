@@ -2,7 +2,9 @@
 [![Documentation Status](https://readthedocs.org/projects/minimal-viable-package/badge/?version=latest)](https://minimal-viable-package.readthedocs.io/en/latest/?badge=latest)
 
 # Minimal-Viable-Package
-Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, Read the Docs (RTD), package managers, distributions, containers, and high performance computing (HPC). We intend the README tutorial suggestions to be read and followed linearly.
+Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, Read the Docs (RTD), package managers, distributions, containers, and high performance computing (HPC). 
+
+We intend the README tutorial suggestions to be read and followed linearly.
 
 ## Project Structure
 A minimal example of a **complete** Python package's working directory, will look like something below. In this README tutorial, we'll review how to build this as hassle free (as we're aware of).
@@ -84,7 +86,7 @@ Here's how we would install each dependency individually:
 (mvp_env)$ conda install -c conda-forge sphinx_rtd_theme
 ```
 
-Now that we have a minimal environment for our package, let's export the dependencies to a **yml** file, so we don't have to do this again.
+Now that we have a minimal environment for our package, let's export the dependencies to a *yet another markdown language* or **yml** file, so we don't have to do this again.
 
 ```bash
 (mvp_env)$ cd minimal-viable-package
@@ -102,7 +104,7 @@ $ conda env create -f environment.yml
 $ conda activate mvp_env
 $ conda deactivate mvp_env # how to deactivate the conda environment
 ```
-**Note**: Keeping the mvp_env activate is not necessary for this tutorial's entire build and test cycle. We will specify when to activate the environment. You can leave the environment activated unless you're installing/testing/developing other Python libraries. Otherwise, we suggest deactivating the environment.
+**Note**: Keeping the mvp_env activate is not necessary for this tutorial's entire build, documentation, and test cycle. We will specify when to activate the environment. You can leave the environment activated unless you're installing/testing/developing other Python libraries. Otherwise, we suggest deactivating the environment.
 
 **5. Create a pyproject.toml in the working directory that specifies the package's build system.**
 
@@ -155,7 +157,7 @@ If you're using the Visual Studio Code IDE and the autoDocstring extension, we c
 
 For example, in the submodule example.welcome.Greeting() we have a class method called **the_zen_of_python** that reads a text file and returns each line of the file's message as an element in a list of strings. We want to parameterize the class method to read the file from any location and return the list to read. To do this we'll set a parameter of type string for a user to indicate the file path. 
 
-Using type hints, we can indicate in the class method definition the type of input parameter (str) and the output type -> a list of strings list[str]:
+Using type hints, we can indicate in the class method definition the type of input parameter (str) and the output type (->) a list of strings list[str]:
 
 ```python
 def the_zen_of_python(self, read_file: str) -> list[str]:
@@ -257,7 +259,7 @@ $ cd .github
 $ mkdir workflows
 ```
 
-**2. Create a yet another markup language (YAML) file and specify the commands to run whenever your code is pushed to the repository (i.e, unit tests, RTD, etc.).**
+**2. Create YML file and specify the commands to run whenever your code is pushed to the repository (i.e, unit tests, RTD, etc.).**
 
 ```bash
 $ cd minimal-viable-project/.github/workflows
@@ -317,7 +319,7 @@ Copy/Paste and update the relevant fields with <**your info**>.
 
 **4. Push your commits and then check if your workflow badge indicates passing.**
 
-You've now specified the minimal requirements to automate the build and test cycle for your software package. Congrats!
+You've now specified the minimal requirements to automate the build, documentation, and test cycle for your software package. Congrats!
 
 For more references related to **GitHub Actions**, here are a few helpful links:
 * [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
