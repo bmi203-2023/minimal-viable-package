@@ -1,8 +1,8 @@
-![BuildStatus](https://github.com/bmi203-2023/Minimal-Example/actions/workflows/main.yml/badge.svg?event=push)
-[![Documentation Status](https://readthedocs.org/projects/minimal-example/badge/?version=latest)](https://minimal-example.readthedocs.io/en/latest/?badge=latest)
+![BuildStatus](https://github.com/bmi203-2023/minimal-viable-package/actions/workflows/main.yml/badge.svg?event=push)
+[![Documentation Status](https://readthedocs.org/projects/minimal-viable-package/badge/?version=latest)](https://minimal-example.readthedocs.io/en/latest/?badge=latest)
 
 # Minimal-Viable-Package
-Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, package managers, distributions, containers, and Read the Docs. We intend the README/Tutorial suggestions to be read and followed linearly.
+Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, Read the Docs (RTD), package managers, distributions, containers, and high performance computing (HPC). We intend the README/Tutorial suggestions to be read and followed linearly.
 
 ## Project Structure
 A minimal example of a **complete** Python package's working directory, will look like something below. In this README tutorial, we'll review how to build this as hassle free (as we're aware of).
@@ -180,8 +180,10 @@ To create a project directory tree as seen above for your README, please follow 
 
 ```bash
 $ cd minimal-viable-package
-$ tree minimal-viable-package -o tree.md
+$ tree minimal-viable-package -o minimal-viable-package/tree.md
 ```
+
+For this tutorial, we copied/pasted the contents of tree.md into this README and edited accordingly.
 
 For more references on Python packaging, here are a few helpful links:
 * [Setting up a repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init)
@@ -205,7 +207,7 @@ $ cd .github
 $ mkdir workflows
 ```
 
-**2. Create a yet another markup language (YAML) file and specify the commands to run whenever code is pushed to the repository (i.e, unit tests, RTD, etc.).**
+**2. Create a yet another markup language (YAML) file and specify the commands to run whenever your code is pushed to the repository (i.e, unit tests, RTD, etc.).**
 
 ```bash
 $ cd minimal-viable-project/.github/workflows
@@ -251,14 +253,34 @@ jobs:
         run: python -m pytest -v test/*
 ```
 
+You've now specified the minimal requirements to automate the build and test cycle for your software package. Congrats!
+
+**3. Add a workflow status badge to your README to indicate if you're failing or passing.**
+
+```bash
+$ cd minimal-viable-project
+$ vim REAMD.md
+```
+Copy/Paste and update the relevant fields with <**your info**>.
+
+```markdown
+![BuildStatus](https://github.com/<your githandle>/<your repository name>/actions/workflows/main.yml/badge.svg?event=push)
+```
+
+
+
 For more references related to **GitHub Actions**, here are a few helpful links:
 * [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 * [Adding a workflow status badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)
 
+## Read the Docs
+
+
 ## Package Managers, Distributions, & Containers
+
 * [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 * [Homebrew](https://brew.sh/)
-
-## Read the Docs
+* [Docker](https://www.docker.com/products/docker-desktop/)
+* [Singularity](https://sylabs.io/)
 
 ## UCSF High Performance Computing (HPC) Resources
