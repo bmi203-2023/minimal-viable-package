@@ -2,7 +2,7 @@
 [![Documentation Status](https://readthedocs.org/projects/minimal-viable-package/badge/?version=latest)](https://minimal-example.readthedocs.io/en/latest/?badge=latest)
 
 # Minimal-Viable-Package
-Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, Read the Docs (RTD), package managers, distributions, containers, and high performance computing (HPC). We intend the README/Tutorial suggestions to be read and followed linearly.
+Demonstrate the minimal concepts/training to structure a project, build Python packages, unit testing, GitHub Actions, Read the Docs (RTD), package managers, distributions, containers, and high performance computing (HPC). We intend the README tutorial suggestions to be read and followed linearly.
 
 ## Project Structure
 A minimal example of a **complete** Python package's working directory, will look like something below. In this README tutorial, we'll review how to build this as hassle free (as we're aware of).
@@ -44,7 +44,7 @@ For more references on **project directory** structure/organization for building
 
 We can automate the majority of building a Python package, however, there are a few starting steps to consider. Here we'll outline the best practices (that again we're aware of) to simplify the process.
 
-In this section of the tutorial, we're going to review the minimal steps to create this repository from scratch.
+In this section of the README tutorial, we're going to review the minimal steps to create this repository from scratch.
 
 **1. Create a repository**
 
@@ -67,7 +67,7 @@ $ conda create --name mvp_env python=3.9
 $ conda activate mvp_env
 ```
 
-Note: The mvp_env is shorthand for our minimal-viable-package environment.
+**Note:** The mvp_env is shorthand for our minimal-viable-package environment.
 
 **4. Install the minimal depedencies for unit testing and building our documentation.**
 
@@ -96,7 +96,9 @@ $ git clone https://github.com/bmi203-2023/minimal-viable-package.git
 $ cd env
 $ conda env create -f environment.yml
 $ conda activate mvp_env
+$ conda deactivate mvp_env # how to deactivate the conda environment
 ```
+**Note**: Keeping the mvp_env activate is not necessary for this tutorial's entire build and test cycle. We will specify when to activate the environment. You can leave the environment activated unless you're installing/testing/developing other Python libraries. Otherwise, we suggest deactivating the environment.
 
 **5. Create a pyproject.toml in the working directory that specifies the package's build system.**
 
@@ -147,7 +149,9 @@ $ touch welcome.py
 
 ```bash
 $ cd minimal-viable-package
-$ flit install -s # builds your package in editable or development mode
+$ conda activate mvp_env
+(mvp_env)$ flit install -s # builds your package in editable or development mode
+$ conda deactivate mvp_env
 ```
 
 **8. As you iteratively develop each module and submodule, consider your edge cases and design rationally explained unit tests to assess them. We suggest naming your unit tests by their associated module and their test functions as the submodule you're evaluating.**
@@ -253,8 +257,6 @@ jobs:
         run: python -m pytest -v test/*
 ```
 
-You've now specified the minimal requirements to automate the build and test cycle for your software package. Congrats!
-
 **3. Add a workflow status badge to your README to indicate if you're failing or passing.**
 
 ```bash
@@ -267,13 +269,70 @@ Copy/Paste and update the relevant fields with <**your info**>.
 ![BuildStatus](https://github.com/<your githandle>/<your repository name>/actions/workflows/main.yml/badge.svg?event=push)
 ```
 
+**4. Push your commits and then check if your workflow badge indicates passing.**
 
+You've now specified the minimal requirements to automate the build and test cycle for your software package. Congrats!
 
 For more references related to **GitHub Actions**, here are a few helpful links:
 * [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
 * [Adding a workflow status badge](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge)
 
 ## Read the Docs
+
+Read the Docs (RTD) is a software documentation service for automating the building, version control, and hosting of your software's documentation. In this section of the README tutorial, we'll review how we built the RTD for the minimal-viable-package's example module.
+
+**1. Create a RTD account and link your GitHub.**
+* [ReadtheDocs](https://readthedocs.org/)
+
+**2. Create the RTD directory for your Python package.**
+
+Update the relevant fields with <**your info**>.
+
+```bash
+$ cd minimal-viable-example
+$ conda activate mvp_env
+(mvp_env)$ mkdir docs
+(mvp_env)$ cd docs
+(mvp_env)$ sphinx-quickstart
+
+Welcome to the Sphinx 4.4.0 quickstart utility.
+
+Please enter values for the following settings (just press Enter to
+accept a default value, if one is given in brackets).
+
+Selected root path: .
+
+You have two options for placing the build directory for Sphinx output.
+Either, you use a directory "_build" within the root path, or you separate
+"source" and "build" directories within the root path.
+> Separate source and build directories (y/n) [n]: y
+
+The project name will occur in several places in the built documentation.
+> Project name: <Minimal Viable Project>
+> Author name(s): <Andrew Blair>
+> Project release []: <0.1.0>
+
+If the documents are to be written in a language other than English,
+you can select a language here by its language code. Sphinx will then
+translate text that it generates into that language.
+
+For a list of supported codes, see
+https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-language.
+> Project language [en]: 
+
+Creating file (RTD will automate the full path to) minimal-viable-package/docs/source/conf.py.
+Creating file (RTD will automate the full path to) minimal-viable-package/docs/source/index.rst.
+Creating file (RTD will automate the full path to) minimal-viable-package/docs/Makefile.
+Creating file (RTD will automate the full path to) minimal-viable-package/docs/make.bat.
+
+Finished: An initial directory structure has been created.
+
+You should now populate your master file  (RTD will automate the full path to) minimal-viable-package/docs/source/index.rst and create other documentation
+source files. Use the Makefile to build the docs, like so:
+   make builder
+where "builder" is one of the supported builders, e.g. html, latex or linkcheck.
+```
+
 
 
 ## Package Managers, Distributions, & Containers
@@ -284,3 +343,4 @@ For more references related to **GitHub Actions**, here are a few helpful links:
 * [Singularity](https://sylabs.io/)
 
 ## UCSF High Performance Computing (HPC) Resources
+
