@@ -442,13 +442,49 @@ In addition, we need to specify the auto directive extensions for every object w
 extensions = ['sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.ext.autodoc']
 ```
 
-**4. Auto-generate documentation from docstrings in your Python package's source files.***
+For a more detailed view, please see the conf.py [link here](https://github.com/bmi203-2023/minimal-viable-package/blob/master/docs/source/conf.py).
+
+**4. Auto-generate documentation from docstrings in your Python package's source files.**
+
+The following commands can be used to auto-generate **.rst** files for our Python module.
 
 ```bash
 $ cd minimal-viable-package/docs/
 $ conda activate mvp_env
-(mvp_env)$ sphinx-apidoc -f -o source/ ../src/example 
+(mvp_env)$ sphinx-apidoc -f -o source/ ../src/example
+Creating file ./source/example.rst.
+Creating file ./source/modules.rst.
 ```
+
+Since we only have one module (i.e., example), let's focus on the **example.rst** file. 
+
+```RS
+example package
+===============
+
+Submodules
+----------
+
+example.welcome module
+----------------------
+
+.. automodule:: example.welcome
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: example
+   :members:
+   :undoc-members:
+   :show-inheritance:
+```
+
+Focusing on the **Submodules** section, we should see the directive options: **:members**, **:undoc-members**, and **:show-inheritance**. If these are generated, **autodoc** should be able to generate documentation from our docstrings.
+
+
 
 For more references related to **Sphinx-RTD-Tutorial**, here are a few helpful links:
 * [Read the Docs Tutorial](https://docs.readthedocs.io/en/stable/tutorial/index.html)
