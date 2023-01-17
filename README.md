@@ -482,7 +482,11 @@ Module contents
    :show-inheritance:
 ```
 
-**5. Create a yml file for the RTD build.**
+Focusing on the **Submodules** section, we should see the directive options: **:members**, **:undoc-members**, and **:show-inheritance**. If these are generated, **autodoc** should be able to generate documentation from our docstrings.
+
+Since our documentation requires the minimal-viable-package's **example** module to be installed, we need to specify a RTD configuration file to build and install the package.
+
+**5. Create a yml file for the RTD build in the working directory.**
 
 ```yml
 # Read the Docs configuration file
@@ -505,8 +509,6 @@ python:
     - method: pip
       path: .
 ```
-
-Focusing on the **Submodules** section, we should see the directive options: **:members**, **:undoc-members**, and **:show-inheritance**. If these are generated, **autodoc** should be able to generate documentation from our docstrings.
 
 For more references related to **Sphinx-RTD-Tutorial**, here are a few helpful links:
 * [Read the Docs Tutorial](https://docs.readthedocs.io/en/stable/tutorial/index.html)
