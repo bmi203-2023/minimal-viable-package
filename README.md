@@ -526,6 +526,8 @@ We now have everything in place to create an RTD for our Python package. Let's a
 
 Once you're signed into RTD, there are a few different options to import your project. For this tutorial, we linked our GitHub to the ReadTheDocs accounts. If you take this route, you can import your GitHub repository in the [RTD dashboard](https://readthedocs.org/dashboard/) and then [import](https://readthedocs.org/dashboard/import/?) your specific project.
 
+**Note**: RTD defaults to checking out the project's "master" branch. However, Git will default your initial repository's name to "main." You can rename your primary Git branch to "master," as we did in this example. Or, in your project's RTD, you can navigate to the "Admin" tab and then "Advanced Settings", where you can set the default branch RTD checks outs.
+
 If the documentation passes, let's next add a badge to indicate you passed.
 
 **7. Add the doc badge to the top of the README.**
