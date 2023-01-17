@@ -426,7 +426,7 @@ In **conf.py**, modify the following configuration variable:
 html_theme = 'sphinx_rtd_theme'
 ```
 
-Next, if we want Sphinx to autogenerate our package's documentation from our code using the **autodoc** extension, we need to point Sphinx to the directory our Python package's source code. We'll do this by adding the following lines of code to the top of **conf.py**.
+Next, if we want Sphinx to autogenerate our package's documentation from our code using the **autodoc** extension, we need to point Sphinx to the directory containing our Python package's source code. We'll do this by adding the following lines of code to the top of **conf.py**.
 
 ```python
 import os
