@@ -128,7 +128,7 @@ requires = [
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "<your name>"
+name = "<the project's module name>" # example
 authors = [{name = "<name>", email = "<email>"}]
 license = {file = "LICENSE"}
 classifiers = ["License :: OSI Approved :: MIT License"]
@@ -442,11 +442,13 @@ In addition, we need to specify the auto directive extensions for every object w
 extensions = ['sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.ext.autodoc']
 ```
 
-For a more detailed view, please see the minimal-viable-package's conf.py [link here](https://github.com/bmi203-2023/minimal-viable-package/blob/master/docs/source/conf.py).
+For a more detailed view, please see the minimal-viable-package's **conf.py** [link here](https://github.com/bmi203-2023/minimal-viable-package/blob/master/docs/source/conf.py).
+
+Now that we've set our RTD configuration file to our specifications, we need to instruct the RTD build process to incoporate our package's docstrings into the documentation. In the next step, we'll review how to use **autodoc** to build the package's **rst** files for automated documentation. 
 
 **4. Auto-generate documentation from docstrings in your Python package's source files.**
 
-The following commands can be used to auto-generate **.rst** files for our Python module.
+The following commands can be used to auto-generate **.rst** files for our Python module and submodules.
 
 ```bash
 $ cd minimal-viable-package/docs/
@@ -482,11 +484,20 @@ Module contents
    :show-inheritance:
 ```
 
-Focusing on the **Submodules** section, we should see the directive options: **:members**, **:undoc-members**, and **:show-inheritance**. If these are generated, **autodoc** should be able to generate documentation from our docstrings.
+Directing attention to the **Submodules** section, we should see the directive options: **:members**, **:undoc-members**, and **:show-inheritance**. If these are generated, **autodoc** should be able to generate documentation from our docstrings.
 
-Since our documentation requires the minimal-viable-package's **example** module to be installed, we need to specify a RTD configuration file to build and install the package.
+Since our documentation requires the minimal-viable-package's **example** module to be installed, we'll next review how to specify an RTD configuration file to build and install the package.
 
 **5. Create a yml file for the RTD build in the working directory.**
+
+Similar to our earlier sections on **pyproject.toml**, the conda environment **yml** file, **unit tests**, and **GitHub Actions** we need to specify the recipe steps for RTD to build and document our package.
+
+```bash
+$ cd minimal-viable-project
+$ touch .readthedocs.yaml
+```
+
+Copy/paste the the snippet below into **.readthedocs.yaml**. 
 
 ```yml
 # Read the Docs configuration file
@@ -500,21 +511,43 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.11"
-  # jobs:
-  #   pre_create_environment:
-  #   - echo "pip install ."
 
 python:
   install:
-    - method: pip
+    - method: pip # pip will recognize the pyproject.toml for installation
       path: .
 ```
+
+**Note**: For the minimal-viable-package, we didn't need to specify any user specific information for the build, but this might not be true for more complex projects.
+
+We now have everything in place to create an RTD for our Python package. Let's add, commit, and push to Git, then navigate to RTD.
+
+**6. Build and publish the documentation to ReadTheDocs.**
+
+Once you're signed into RTD, there are a few different options to import your project. For this tutorial, we linked our GitHub to the ReadTheDocs accounts. If you take this route, you can import your GitHub repository in the [RTD dashboard](https://readthedocs.org/dashboard/) and then [import](https://readthedocs.org/dashboard/import/?) your specific project.
+
+If the documentation passes, let's next add a badge to indicate you passed.
+
+**7. Add the doc badge to the top of the README.**
+
+```bash
+$ cd minimal-viable-package
+$ vim README.md
+```
+Copy/Paste and update the relevant fields with <**your info**>.
+
+```markdown
+[![Documentation Status](https://readthedocs.org/projects/<Project Slug>/badge/?version=latest)](https://<Project URL>.readthedocs.io/en/latest/?badge=latest)
+```
+
+Congratulations, and thank you for making it this far in the tutorial! The next sections will review our best practices for development operations and high performance computing.
 
 For more references related to **Sphinx-RTD-Tutorial**, here are a few helpful links:
 * [Read the Docs Tutorial](https://docs.readthedocs.io/en/stable/tutorial/index.html)
 * [Sphinx-RTD-Tutorial](https://sphinx-rtd-tutorial.readthedocs.io/en/latest/sphinx-quickstart.html)
 * [Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/)
 * [Sphinx.ext.autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc)
+
 ## Package Managers, Distributions, & Containers
 
 * [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
@@ -524,3 +557,10 @@ For more references related to **Sphinx-RTD-Tutorial**, here are a few helpful l
 
 ## UCSF High Performance Computing (HPC) Resources
 
+## TODO
+
+- [] Package Managers, Distributions, & Containers
+- [] UCSF HPC
+- [] RTD for multiple modules
+- [] RTD with Plotly integration
+- [] RTD with machine learning API documentation
