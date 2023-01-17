@@ -442,7 +442,7 @@ In addition, we need to specify the auto directive extensions for every object w
 extensions = ['sphinx.ext.todo', 'sphinx.ext.viewcode', 'sphinx.ext.autodoc']
 ```
 
-For a more detailed view, please see the conf.py [link here](https://github.com/bmi203-2023/minimal-viable-package/blob/master/docs/source/conf.py).
+For a more detailed view, please see the minimal-viable-package's conf.py [link here](https://github.com/bmi203-2023/minimal-viable-package/blob/master/docs/source/conf.py).
 
 **4. Auto-generate documentation from docstrings in your Python package's source files.**
 
@@ -482,9 +482,31 @@ Module contents
    :show-inheritance:
 ```
 
+**5. Create a yml file for the RTD build.**
+
+```yml
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# Set the version of Python and other tools you might need
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.11"
+  # jobs:
+  #   pre_create_environment:
+  #   - echo "pip install ."
+
+python:
+  install:
+    - method: pip
+      path: .
+```
+
 Focusing on the **Submodules** section, we should see the directive options: **:members**, **:undoc-members**, and **:show-inheritance**. If these are generated, **autodoc** should be able to generate documentation from our docstrings.
-
-
 
 For more references related to **Sphinx-RTD-Tutorial**, here are a few helpful links:
 * [Read the Docs Tutorial](https://docs.readthedocs.io/en/stable/tutorial/index.html)
