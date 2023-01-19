@@ -105,7 +105,7 @@ $ conda env create -f environment.yml
 $ conda activate mvp_env
 $ conda deactivate mvp_env # how to deactivate the conda environment
 ```
-**Note**: Keeping the mvp_env activate is not necessary for this tutorial's entire build, documentation, and test cycle. We will specify when to activate the environment. You can leave the environment activated unless you're installing/testing/developing other Python libraries. Otherwise, we suggest deactivating the environment.
+**Note**: Keeping the mvp_env active is not necessary for this tutorial's entire build, documentation, and test cycle. We will specify when to activate the environment. You can leave the environment activated unless you're installing/testing/developing other Python libraries. Otherwise, we suggest deactivating the environment.
 
 **5. Create a pyproject.toml in the working directory that specifies the package's build system. Let's also add a .gitignore to ignore files we don't want to push.**
 
