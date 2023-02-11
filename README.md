@@ -557,6 +557,23 @@ For more references related to **Sphinx-RTD-Tutorial**, here are a few helpful l
 * [Docker](https://www.docker.com/products/docker-desktop/)
 * [Singularity](https://sylabs.io/)
 
+### How to install a GitHub Python package without a requirements.txt file? 
+
+```bash
+$ pip install pipreqs
+$ pipreqs /path/to/project
+```
+
+[Stack Overflow: Automatically create requirements.txt](https://stackoverflow.com/questions/31684375/automatically-create-requirements-txt)
+[GitHub: pipreqs](https://github.com/bndr/pipreqs)
+
+### How to install a python package using pip and a requirements.txt file?
+
+```bash
+$ pip install -r requirements.txt
+```
+[How to install Python packages with pip and requirements.txt](https://note.nkmk.me/en/python-pip-install-requirements/)
+
 ## UCSF High Performance Computing (HPC) Resources
 
 ## TODO
