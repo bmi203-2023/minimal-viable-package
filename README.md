@@ -522,9 +522,21 @@ python:
 
 We now have everything in place to create an RTD for our Python package. Let's add, commit, and push to Git, then navigate to RTD.
 
-**6. Build and publish the documentation to ReadTheDocs.**
+**6. Build and publish your package documentation to ReadTheDocs by manually connecting to Git.**
 
 Once you're signed into RTD, there are a few different options to import your project. For this tutorial, we linked our GitHub to the ReadTheDocs accounts. If you take this route, you can import your GitHub repository in the [RTD dashboard](https://readthedocs.org/dashboard/) and then [import](https://readthedocs.org/dashboard/import/?) your specific project.
+
+* Next, navigate to your project's GitHub repository and selecting the **Settings** page tab. In the left hand corner of the **Settings**, select **Webhooks** and then **Add webhook**.
+
+* For Payload URL, use the URL of the integration on your Read the Docs project, found on the RTD project’s **Admin** > **Integrations** page. 
+
+* You may need to prepend https:// to the RTD URL. For Content type, both application/json and application/x-www-form-urlencoded work. Leave the Secrets field blank.
+
+* Select Let me select individual events, and mark Branch or tag creation, Branch or tag deletion, Pull requests and Pushes events
+
+* Ensure Active is enabled; it is by default
+
+* Finish by clicking Add webhook. You may be prompted to enter your GitHub password to confirm your action.
 
 **Note**: RTD defaults to checking out the project's "master" branch. However, Git will default your initial repository's name to "main." You can rename your primary Git branch to "master," as we did in this example. Or, in your project's RTD, you can navigate to the "Admin" tab and then "Advanced Settings", where you can set the default branch RTD checks outs.
 
@@ -549,6 +561,7 @@ For more references related to **Sphinx-RTD-Tutorial**, here are a few helpful l
 * [Sphinx-RTD-Tutorial](https://sphinx-rtd-tutorial.readthedocs.io/en/latest/sphinx-quickstart.html)
 * [Sphinx Theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/)
 * [Sphinx.ext.autodoc](https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#module-sphinx.ext.autodoc)
+* [Manually Connect Git & RTD](https://docs.readthedocs.io/en/latest/guides/git-integrations.html)
 
 ## Package Managers, Distributions, & Containers
 
